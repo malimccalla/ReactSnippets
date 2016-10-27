@@ -1,0 +1,40 @@
+'.source.js':
+  'reducer':
+    'prefix': 'red'
+    'body': """
+      const INITITAL_STATE = {};
+
+      export default (state = INITITAL_STATE, action) => {
+        switch (action.type) {
+          default:
+            return state;
+        }
+      };
+    """
+  'React import':
+    'prefix': 'im'
+    'body': """
+      import React, { Component } from \'react\';
+
+      class ${1:className} extends Component {
+        render() {
+          return (
+            $2
+          );
+        }
+      }
+
+      export default ${1:className};
+    """
+  'mapStateToProps':
+    'prefix': 'ms'
+    'body': """
+      const mapStateToProps = (state) => {
+        return {
+          $1
+        }
+      };
+    """
+  'React Native':
+    'prefix': 'rn'
+    'body': 'import { $1 } from \'react-native\';'
